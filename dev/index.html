@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Example integration of Northwest Currency converter</title>
+    </head>
+    <body>
+        <div id="nwmc"></div>
+        <script>
+            nwmc = {preventAutoInit: true}
+        </script>
+        <script src="http://northwestmoneyexchange.com/libraries/nwme_ratesupdater/widget/nwmc.js.php"></script>
+        <script>
+            /* At this point, the script is included but not run... Lets run it with our own options. */
+            (function customInit() {
+                var widget = nwmc.widget({widthSmall: 400, widthTiny: 250});
+                widget.init();
+                window.onresize = widget.adjust;
+            })();
+        </script>
+
+    </body>
+</html>
